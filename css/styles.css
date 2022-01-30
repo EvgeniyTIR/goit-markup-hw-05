@@ -92,13 +92,13 @@ img {
 
   padding-top: 32px;
   padding-bottom: 32px;
+  transition: color 250ms var(--timing-function);
 }
 .site-nav .item {
 }
 .site-nav .link:hover,
 .site-nav .link:focus {
   color: var(--accent-color);
-  transition: color 250ms var(--timing-function);
 }
 .site-nav .link.current {
   color: var(--accent-color);
@@ -145,25 +145,27 @@ img {
 
   padding-top: 32px;
   padding-bottom: 32px;
+
+  transition: color 250ms var(--timing-function);
 }
 .link-envelop {
   fill: #757575;
   margin-right: 10px;
+  transition: fill 250ms var(--timing-function);
 }
 .link:hover .link-envelop,
 .link:focus .link-envelop {
   fill: var(--accent-color);
-  transition: fill 250ms var(--timing-function);
 }
 
 .link-tel {
   fill: #757575;
   margin-right: 10px;
+  transition: fill 250ms var(--timing-function);
 }
 .link:hover .link-tel,
 .link:focus .link-tel {
   fill: var(--accent-color);
-  transition: fill 250ms var(--timing-function);
 }
 .auth .link:hover,
 .auth .link:focus {
@@ -226,9 +228,10 @@ img {
 
   opacity: 1;
   visibility: visible;
-  transition: opacity 250ms var(--timing-function);
+  transition: opacity 250ms var(--timing-function), visibility 250ms var(--timing-function);
 }
 .backdrop.is-hidden {
+  visibility: hidden;
   opacity: 0;
   pointer-events: none;
 }
@@ -425,6 +428,7 @@ img {
   color: #afb1b8;
   transition-property: background-color, color;
   transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 .social-link:hover,
 .social-link:focus {
@@ -462,7 +466,11 @@ img {
   height: 100%;
 
   border: 1px solid #afb1b8;
+  color: var(--accent-color);
+  background-color: var(--primary-white-color);
   border-radius: 4px;
+
+  transition: border 250ms var(--timing-function);
 }
 .clients-item {
   width: 170px;
@@ -473,17 +481,15 @@ img {
 }
 .clients-link:focus,
 .clients-link:hover {
-  background-color: var(--primary-white-color);
-  color: var(--accent-color);
   border: 1px solid var(--accent-color);
 }
 .union {
   fill: #afb1b8;
+  transition: fill 250ms var(--timing-function);
 }
 .clients-link:focus .union,
 .clients-link:hover .union {
   fill: currentColor;
-  transition: fill 250ms var(--timing-function);
 }
 /* ---------------Подвал-------------- */
 .footer {
@@ -561,6 +567,7 @@ img {
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
   color: #afb1b8;
+  transition: color, background-color 250ms var(--timing-function);
 }
 .social-link-footer .icon-diagram-1 {
   fill: var(--primary-white-color);
@@ -569,7 +576,6 @@ img {
 .social-link-footer:focus {
   background-color: var(--accent-color);
   color: var(--primary-white-color);
-  transition: color, background-color 250ms var(--timing-function);
 }
 /* --ПОРТФОЛИО-- 
 Фильтр списка проєктов */
@@ -600,9 +606,7 @@ img {
   border-radius: 4px;
   /* identical to box height, or 162% */
   padding: 6px 22px;
-  transition-property: color;
-  transition-property: box-shadow;
-  transition-property: background-color;
+  transition-property: box-shadow, color, background-color;
   transition-duration: 250ms;
   transition-timing-function: var(--timing-function);
 }
@@ -673,6 +677,8 @@ img {
 .product-overlay {
   display: flex;
   border: none;
+  width: 100%;
+  height: 100%;
 
   padding: 63px 24px;
 
@@ -681,12 +687,12 @@ img {
   left: 0;
 
   background-color: rgba(33, 150, 243, 0.9);
-  transform: translateY(0);
+  transform: translateY(100%);
   transition: transform 250ms var(--timing-function);
 }
 .filter-link:hover .product-overlay,
 .filter-link:focus .product-overlay {
-  transform: translateY(100%);
+  transform: translateY(0);
   overflow: hidden;
 }
 .filter-hidden {
